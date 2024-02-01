@@ -18,7 +18,9 @@ import AppHeader from  '../components/AppHeader.vue'
 main {
   height: 100%;
 }
+
 h1 {
   margin: 0px;
 }
+
 </style>

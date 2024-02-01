@@ -53,7 +53,7 @@ const generateQRCode = () => {
   margin: auto;
   width: 500px;
   height: auto;
-  top: 10em;
+  top: 5em;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -83,4 +83,50 @@ const generateQRCode = () => {
 .form-container button {
   margin-top: 50px;
 }
+
+button {
+  background-image: linear-gradient(to right, #302b63, #24243e);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+select {
+  border: 1px solid black;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 500px) 
+    and (orientation: portrait) {
+    .qr-app-container {
+        width: auto;
+        border: none;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+}
+
 </style>
