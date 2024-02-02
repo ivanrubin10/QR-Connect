@@ -37,7 +37,7 @@ const password = ref("");
 const qrCodeUrl = ref("");
 
 const generateQRCode = () => {
-  if(!ssid.value || !securityType.value || !password.value){
+  if(!ssid.value || !securityType.value || (!password.value &&  securityType.value !== 'nopass')){
     alert('Please fill out all fields');
     return;
   }
