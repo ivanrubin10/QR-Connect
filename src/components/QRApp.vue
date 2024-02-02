@@ -7,7 +7,7 @@
       </div>
       <div class="form-security">
         <label for="securityType">Security Type:</label>
-        <select v-model="securityType" id="securityType">
+        <select v-model="securityType" id="securityType">.
           <option value="WPA">WPA</option>
           <option value="WEP">WEP</option>
           <option value="nopass">Open (no password)</option>
@@ -29,14 +29,18 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // Wi-Fi network information
-const ssid = ref("YourSSID");
-const securityType = ref("WPA");
-const password = ref("YourPassword");
+const ssid = ref("");
+const securityType = ref("");
+const password = ref("");
 
 // QR code URL
 const qrCodeUrl = ref("");
 
 const generateQRCode = () => {
+  if(!ssid.value || !securityType.value || !password.value){
+    alert('Please fill out all fields');
+    return;
+  }
   const wifiPayload = `WIFI:S:${ssid.value};T:${securityType.value};P:${password.value};;`;
   const qrCodeData = encodeURIComponent(wifiPayload);
 
@@ -94,6 +98,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 select {
